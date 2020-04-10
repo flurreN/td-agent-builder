@@ -41,5 +41,5 @@ end
 if windows?
   download 'win32-eventlog', '0.6.7'
   download 'winevt_c', '0.7.3'
-  download 'fluent-plugin-windows-eventlog', '0.5.3'
+  download 'fluent-plugin-windows-eventlog', '0.6.0'
 end
