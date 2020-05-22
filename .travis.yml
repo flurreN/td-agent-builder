@@ -5,12 +5,13 @@ arch: arm64
 services:
   - docker
 jobs:
-  - env: RAKE_TASK="apt:build" APT_TARGETS="debian-buster" ARCHIVE_BASE="debian-buster" PACKAGE_SYSTEM=apt
-  - env: RAKE_TASK="apt:build" APT_TARGETS="ubuntu-bionic" ARCHIVE_BASE="ubuntu-bionic" PACKAGE_SYSTEM=apt
+  - env: RAKE_TASK="apt:build" APT_TARGETS="ubuntu-focal" ARCHIVE_BASE="ubuntu-focal" PACKAGE_SYSTEM=apt
+  # - env: RAKE_TASK="apt:build" APT_TARGETS="debian-buster" ARCHIVE_BASE="debian-buster" PACKAGE_SYSTEM=apt
+  # - env: RAKE_TASK="apt:build" APT_TARGETS="ubuntu-bionic" ARCHIVE_BASE="ubuntu-bionic" PACKAGE_SYSTEM=apt
   # centos-release-scl isn't available for centos-7 on aarch64
   # TODO: Use rbenv instead
   # - env: RAKE_TASK="yum:build" YUM_TARGETS="centos-7" ARCHIVE_BASE="centos-7" PACKAGE_SYSTEM=yum
-  - env: RAKE_TASK="yum:build" YUM_TARGETS="centos-8" ARCHIVE_BASE="centos-8" PACKAGE_SYSTEM=yum
+  # - env: RAKE_TASK="yum:build" YUM_TARGETS="centos-8" ARCHIVE_BASE="centos-8" PACKAGE_SYSTEM=yum
 script:
   - rake $RAKE_TASK
 before_deploy:
